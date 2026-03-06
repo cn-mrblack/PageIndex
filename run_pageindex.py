@@ -10,7 +10,9 @@ if __name__ == "__main__":
     parser.add_argument('--pdf_path', type=str, help='Path to the PDF file')
     parser.add_argument('--md_path', type=str, help='Path to the Markdown file')
 
-    parser.add_argument('--model', type=str, default='gpt-4o-2024-11-20', help='Model to use')
+    # 从环境变量读取默认模型名称，默认使用 gpt-4o-2024-11-20
+    default_model = os.getenv('OPENAI_MODEL', 'gpt-4o-2024-11-20')
+    parser.add_argument('--model', type=str, default=default_model, help='Model to use')
 
     parser.add_argument('--toc-check-pages', type=int, default=20, 
                       help='Number of pages to check for table of contents (PDF only)')
