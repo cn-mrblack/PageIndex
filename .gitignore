@@ -16,3 +16,5 @@ json_results/*
 .claude/*
 .copilot/*
 .venv/*
+results/*
+example_data/*
